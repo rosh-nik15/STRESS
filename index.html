@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stress Detection System</title>
+</head>
+<body>
+    <h2>Stress Detection System</h2>
+
+    <form action="/predict" method="post">
+        Sleep Hours: <input type="number" step="0.1" name="sleep"><br><br>
+        Work Hours: <input type="number" step="0.1" name="work"><br><br>
+        Screen Time: <input type="number" step="0.1" name="screen"><br><br>
+        Physical Activity (hrs): <input type="number" step="0.1" name="activity"><br><br>
+
+        <button type="submit">Predict Stress</button>
+    </form>
+
+    {% if prediction %}
+        <h3>Predicted Stress Level: {{ prediction }}</h3>
+    {% endif %}
+</body>
+</html>
